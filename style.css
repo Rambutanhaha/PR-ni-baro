@@ -1,0 +1,451 @@
+/* --- Color Palette & Variables (Final Theme) --- */
+:root {
+    --color-primary: #FFFFFF; /* Pure white for section backgrounds on gradient */
+    --color-gradient-start: #CCFBFF; /* Light Blue from image */
+    --color-gradient-end: #EF96C5;   /* Soft Pink from image */
+    --color-text-dark: #333333; /* Darker text for readability */
+    --color-text-light: #F0F0F0; /* Light text for gradient backgrounds */
+    --color-text-soft: #6A6A6A; /* Softer gray for secondary text */
+    --color-accent-gold: #B8860B; /* Rich Gold (retained for contrast on CTA) */
+    --color-faq-bg: rgba(255, 255, 255, 0.8); /* Slightly transparent white for FAQ */
+}
+
+/* --- Global Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- FULL PAGE GRADIENT APPLIED HERE --- */
+body {
+    background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%); /* Apply gradient to the entire body */
+    color: var(--color-text-dark);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5em;
+    padding-top: 10px; 
+}
+
+h1 {
+    font-size: 4.5rem; 
+    color: var(--color-text-dark); 
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5); 
+    padding-top: 0;
+}
+
+h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: var(--color-text-dark); 
+}
+
+h3 {
+    color: var(--color-text-dark);
+}
+
+a {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent-gold);
+}
+
+/* Sections now use white backgrounds for contrast against the body gradient */
+.section-padding {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 30px auto; /* Margin to show the body gradient around sections */
+    background-color: var(--color-primary); /* White background for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Hero section on index.html doesn't need padding/background */
+.hero-section {
+    padding-top: 20vh; /* Push content down past fixed header */
+    background-color: transparent; 
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.accent-gold {
+    color: var(--color-accent-gold);
+}
+.accent-pink { 
+    color: var(--color-gradient-end);
+}
+
+
+/* --- Header & Navigation (Transparent/White background) --- */
+header {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white header */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 5%; 
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Small Logo for all pages (UPDATED: Small, as requested) */
+.header-small-logo {
+    height: 40px; /* Smaller size */
+    width: auto;
+    margin-right: 20px;
+    display: block; 
+}
+.header-small-logo img {
+    height: 100%;
+    width: auto;
+    border-radius: 5px; 
+}
+
+/* Main Navigation (Visible on all pages) */
+nav {
+    display: flex; 
+    justify-content: center; 
+    flex-grow: 1; 
+}
+
+nav a {
+    margin: 0 15px; 
+    font-size: 1.05rem; 
+    letter-spacing: 1px; 
+    color: var(--color-text-dark); 
+    position: relative;
+    padding-bottom: 5px; 
+    font-weight: 500;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: var(--color-accent-gold);
+    transition: width 0.3s ease;
+}
+nav a:hover::after {
+    width: 80%; 
+}
+
+/* Utility Bar */
+.utility-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.language-selector select {
+    background: none;
+    border: 1px solid var(--color-text-dark); 
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: var(--color-text-dark);
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+.language-selector select:hover {
+    border-color: var(--color-accent-gold);
+}
+
+.utility-icons i {
+    cursor: pointer;
+    color: var(--color-text-dark); 
+    font-size: 1.1rem;
+}
+.utility-icons i:hover {
+    color: var(--color-accent-gold);
+}
+
+
+/* --- MAIN LOGO (Home Page Only - Smaller size) --- */
+.main-logo-container {
+    text-align: center;
+    margin-bottom: 40px; 
+}
+.main-logo {
+    width: 300px; /* Much smaller logo */
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.3s ease;
+}
+.main-logo:hover {
+    transform: scale(1.05);
+}
+
+
+/* --- CTA Button Style --- */
+.cta-button {
+    display: inline-block;
+    padding: 14px 35px; 
+    border: 1px solid var(--color-accent-gold);
+    background-color: var(--color-accent-gold); 
+    color: var(--color-primary); 
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-top: 25px; 
+    border-radius: 3px; 
+}
+
+.cta-button:hover {
+    background-color: var(--color-primary); 
+    color: var(--color-accent-gold); 
+    border-color: var(--color-accent-gold);
+}
+
+
+/* --- Shop Section Placeholder --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+.product-card {
+    background-color: var(--color-primary); 
+    min-height: 450px; 
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    border-radius: 5px; 
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-gradient-start); 
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+/* ... (rest of product card styles) ... */
+
+
+/* --- Review Card & FAQ (Final Styling) --- */
+/* FAQ Container Styling - Visual Design Added */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--color-faq-bg); /* Slightly transparent white */
+    border-radius: 10px;
+    border: 1px solid var(--color-gradient-start);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-gradient-end); 
+    margin-bottom: 10px;
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    /* ... (FAQ question styles for button, etc.) ... */
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-dark);
+    transition: color 0.3s ease;
+}
+.faq-question:hover {
+    color: var(--color-accent-gold);
+}
+
+.faq-question i {
+    color: var(--color-gradient-end); 
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-answer.active {
+    max-height: 200px; 
+    padding: 15px 0 15px 0; 
+}
+
+
+/* --- Contact/Booking Section (Two-Column Grid Form) --- */
+.booking-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-details {
+    padding-right: 20px;
+    border-right: 1px solid var(--color-gradient-start); 
+    color: var(--color-text-dark);
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+}
+.contact-details i {
+    margin-right: 12px; 
+    color: var(--color-gradient-end); 
+}
+.contact-details .social-links a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+/* Grid for the form inputs */
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    padding: 0;
+}
+
+/* Style for all standard input fields */
+.contact-form input,
+.contact-form select {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-primary); 
+    border: 1px solid var(--color-gradient-start); 
+    color: var(--color-text-dark);
+    font-size: 1rem;
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+/* Focused style uses the pink accent color */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-gradient-end); 
+    box-shadow: 0 0 5px rgba(239, 150, 197, 0.5); 
+}
+
+/* Textarea needs to span both columns */
+.contact-form textarea { 
+    grid-column: 1 / -1; 
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-primary); 
+    border: 1px solid var(--color-gradient-start);
+    color: var(--color-text-dark);
+    font-size: 1rem;
+    resize: vertical; 
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form h3 {
+    grid-column: 1 / -1; 
+    margin-bottom: 5px; 
+    text-align: left;
+    padding-top: 0;
+}
+
+/* Make the CTA button full width */
+.contact-form .cta-button {
+    grid-column: 1 / -1; 
+    width: 100%;
+    margin-top: 0;
+}
+
+
+/* --- Footer (Transparent background) --- */
+footer {
+    text-align: center;
+    padding: 25px; 
+    background-color: rgba(255, 255, 255, 0.95); 
+    border-top: 1px solid var(--color-gradient-start); 
+    font-size: 0.9rem; 
+    color: var(--color-text-dark); 
+    margin-top: 30px;
+}
+/* ... (rest of footer styles) ... */
+
+
+/* --- Media Queries for Responsiveness (Unchanged) --- */
+@media (max-width: 900px) {
+    /* ... (mobile styles) ... */
+}
+@media (max-width: 500px) {
+    /* ... (mobile styles) ... */
+}
+/* --- MAIN LOGO (Home Page Only - Smaller size) --- */
+.main-logo-container {
+    text-align: center;
+    margin-bottom: 30px; /* Reduced margin slightly */
+}
+.main-logo {
+    width: 220px; /* <-- NEW, SMALLER SIZE */
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.3s ease;
+}
+.main-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Also updating mobile size to keep it scaled down */
+@media (max-width: 900px) {
+    /* ... (other mobile styles) ... */
+    .main-logo {
+        width: 60%; /* Adjust large logo size for smaller screens */
+        max-width: 250px; /* NEW max-width */
+    }
+    /* ... (rest of mobile styles) ... */
+}
+/* --- Hero Section (UPDATED: Content Centering Fixed) --- */
+.hero-section {
+    padding-top: 20vh; 
+    background-color: transparent; 
+    box-shadow: none;
+    margin-bottom: 0;
+    
+    /* FIX: Ensure content inside the flex container is centered */
+    align-items: center; 
+    
+    /* The body of the hero section needs to ensure its text is centered */
+    text-align: center; 
+    
+    /* Ensuring the container spans full width to center its content */
+    width: 100%;
+}
