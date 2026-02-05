@@ -311,11 +311,13 @@ nav a:hover::after {
 }
 
 .contact-details p {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
+    
 }
 .contact-details i {
-    margin-right: 12px; 
-    color: var(--color-gradient-end); 
+   color: var(--color-gradient-end); 
+    font-size: 1.5rem;
+    margin-right: 15px;
 }
 .contact-details .social-links a {
     font-size: 1.5rem;
