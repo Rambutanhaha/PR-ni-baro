@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Gown - Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="admin.html">Dashboard</a></li>
+            <li><a href="add-gown.html">Add New Gown</a></li> <!-- Current Page -->
+            <li><a href="#">Appointments</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Add New Gown Form -->
+        <section class="panel-section">
+            <h2>Add New Gown</h2>
+            <form id="add-gown-form">
+                <div class="form-group">
+                    <label for="gown-name">Gown Name:</label>
+                    <input type="text" id="gown-name" name="gown-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gown-description">Description:</label>
+                    <textarea id="gown-description" name="gown-description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="gown-price">Price:</label>
+                    <input type="number" id="gown-price" name="gown-price" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gown-image">Upload Gown Image:</label>
+                    <input type="file" id="gown-image" name="gown-image" accept="image/*" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Add Gown</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+</body>
+</html>
